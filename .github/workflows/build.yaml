@@ -1,0 +1,14 @@
+name: Generate Docker image
+
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  echo_tag:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: echo tag
+        run: echo ${{steps.tag.outputs.tag}}
