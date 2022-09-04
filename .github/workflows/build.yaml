@@ -11,6 +11,7 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
       - name: import tag parser
+        id: tag
         uses: dawidd6/action-get-tag@v1
       - name: echo tag
         run: echo ${{steps.tag.outputs.tag}}
